@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "build": {
+    "files":[
+    "helpers/Control/a/dist"
+    ],
     "win": {
       "publish": ["github"]
     },
