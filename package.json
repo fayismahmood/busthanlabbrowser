@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron index.js",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder --publish always"
  
   },
   "author": "",
