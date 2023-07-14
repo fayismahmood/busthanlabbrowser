@@ -13,7 +13,8 @@
   "license": "ISC",
   "build": {
     "win": {
-      "publish": ["github"]
+      "publish": ["github"],
+      "releaseType":"release"
     }
   },
   "devDependencies": {
