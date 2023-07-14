@@ -24,7 +24,7 @@ jobs:
         with:
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
-          github_token: ${{ secrets.github_token }}
+          github_token: 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
           args: "-p always"
 
           # If the commit is tagged with a version (e.g. "v1.0.0"),
