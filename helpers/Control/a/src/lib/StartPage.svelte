@@ -47,7 +47,7 @@ export let tabs;
 
 <div class="acc">
   <div>
-    <img style="margin-top: 10px; margin-right: 30px;" width="80" src="/logo.svg" alt="" />
+    <img style="margin-top: 10px; margin-right: 30px;" width="80" src="./logo.svg" alt="" />
   </div>
   {#each PageTabs as e}
     <button on:click={()=>{actTab=e}} class={`${e==actTab?"act":""}`}>

@@ -8,7 +8,7 @@
  
 <div>
   <div>
-    <img src="/logo.svg" alt="">
+    <img src="./logo.svg" alt="">
   </div>
   <div class="lg">
     <div class="inp">

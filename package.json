@@ -12,18 +12,16 @@
   "author": "",
   "license": "ISC",
   "build": {
-    "files":[
-      "**/*"
-    ],
+    "asar":false,
+    "files": [
+      "index.js",
+      "preload.js",
+      "frdist"
+     
+      ],
     "directories": {
-      "buildResources": "helpers/Control/a/dist"
+      "buildResources": "frdist"
        
-    },
-    "win": {
-      "publish": ["github"]
-    },
-    "linux": {
-      "publish": ["github"]
     }
   },
   "devDependencies": {
