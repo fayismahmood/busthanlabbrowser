@@ -11,6 +11,11 @@
   },
   "author": "",
   "license": "ISC",
+  "build": {
+    "win": {
+      "publish": ["github"]
+    }
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",
     "@electron-forge/maker-deb": "^6.1.1",
