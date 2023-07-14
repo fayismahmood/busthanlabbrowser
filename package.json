@@ -13,8 +13,14 @@
   "license": "ISC",
   "build": {
     "win": {
-      "publish": ["github"],
-      "releaseType":["release"]
+      "target": "nsis",
+      "icon": "assets/logo.png"
+    },
+    "publish": {
+      "provider": "github",
+      "repo": "busthanlabbrowser",
+      "owner": "fayismahmood",
+      "releaseType": "release"
     }
   },
   "devDependencies": {
