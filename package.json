@@ -1,0 +1,29 @@
+{
+  "name": "busthanlab",
+  "version": "1.0.0",
+  "description": "busthanlab is a electron based browser proj for busthan lab",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "package": "electron-forge package",
+    "make": "electron-forge make --platform win32"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
+    "electron": "^25.1.0",
+    "electron-log": "^4.4.8"
+  },
+  "dependencies": {
+    "@electron-forge/maker-wix": "^6.2.1",
+    "electron-as-browser": "^1.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "htm": "^3.1.1",
+    "preact": "^10.15.1"
+  }
+}

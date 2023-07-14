@@ -1,0 +1,45 @@
+<script src="./preact.js"></script>
+
+<div class="ctr">
+  <div class="tab_bar">
+    <div class="tabs"></div>
+    <button class="add_tab">+</button>
+  </div>
+  <div class="views">
+
+  </div>
+</div>
+
+<script>
+
+
+
+render(html`<a href="/">Hello!</a>`, document.body);
+
+  let e_tabs=document.querySelector(".tabs")
+  let e_add_tab=document.querySelector(".add_tab")
+
+  function $(tg){
+    return document.createElement(tg)
+  }
+
+  let view=$("div")
+  view.className="view"
+
+  e_add_tab.onclick=()=>{
+    let tbCont=$("div")
+    let tbClsBtn=$("button")
+
+
+    tbClsBtn.innerText="X"
+    tbCont.innerText="New Tab"
+
+    tbClsBtn.onclick=()=>{
+      tbCont.remove()
+    }
+
+    tbCont.append(tbClsBtn)
+    e_tabs.append(tbCont)
+  }
+
+</script>
