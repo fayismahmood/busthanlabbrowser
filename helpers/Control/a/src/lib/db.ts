@@ -1,5 +1,5 @@
 import Surreal from 'surrealdb.js';
-export const db:Surreal = new Surreal('http://localhost:8000/rpc');
+export const db:Surreal = new Surreal('http://192.168.18.55:8000/rpc');
 
 import { writable } from 'svelte/store';
 
