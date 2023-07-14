@@ -14,7 +14,7 @@
   "build": {
     "win": {
       "publish": ["github"],
-      "releaseType":"release"
+      "releaseType":["release"]
     }
   },
   "devDependencies": {
