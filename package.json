@@ -1,6 +1,6 @@
 {
   "name": "busthanlab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "busthanlab is a electron based browser proj for busthan lab",
   "main": "index.js",
   "scripts": {

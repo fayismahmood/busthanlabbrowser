@@ -2,8 +2,21 @@
   import { onMount } from "svelte";
   import { db, log } from "./db";
   import { PrmTypes } from "./prm/PrmTypes";
-  export let tabs=[];
+  import Permission from "./pgs/permission.svelte";
+  import Account from "./pgs/account.svelte";
+  export let PageTabs=["permissions","account"];
+let tabs=[]
 
+
+  let tabDet={
+    permissions:{
+      comp:Permission
+    },
+    account:{
+      comp:Account
+    }
+  }
+  let actTab="permissions"
 
   onMount(() => {
     // document.querySelectorAll("a").forEach(e=>{
@@ -27,7 +40,17 @@
       }
     };
   });
+
+
+ 
 </script>
+<div class="acc">
+  {#each PageTabs as e}
+    <button class={`${e==actTab?"act":""}`}>
+      {e}  
+    </button>
+  {/each}
+</div>
 
 <div class="pg startpg">
   <div class="w">
@@ -50,6 +73,26 @@
 
 <style lang="scss">
   @import "../vars.scss";
+.acc{
+  display: flex;
+  margin: 16px 30px;
+  border-block: 2px solid $terl;
+  
+  box-sizing: content-box;
+  button{
+    background: none;
+    border: none;
+    padding: 5px 10px  ;
+    margin:0 5px;
+    font-size: 18px;
+    color: $pri;
+    cursor: pointer;
+    &.act{
+      font-weight: 400;
+      border-bottom: 2px $pri solid;
+    }
+  }
+}
   .pg {
     width: 100%;
     height: 90vh;
