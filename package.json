@@ -6,15 +6,13 @@
   "scripts": {
     "start": "electron index.js",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder --publish always"
- 
+    "dist": "electron-builder --publish always",
+    "release": "electron-builder"
   },
   "author": "",
   "license": "ISC",
   "build": {
-    "win": {
-      "publish": ["github"]
-    }
+   
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",
