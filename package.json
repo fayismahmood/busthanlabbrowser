@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "electron index.js",
-    "package": "electron-forge package",
-    "make": "electron-forge make --platform win32"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+ 
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,8 @@
     "@electron-forge/maker-rpm": "^6.1.1",
     "@electron-forge/maker-squirrel": "^6.1.1",
     "@electron-forge/maker-zip": "^6.1.1",
-    "electron": "^25.1.0",
+    "electron": "^25.1.0",   
+     "electron-builder": "^24.4.0",
     "electron-log": "^4.4.8"
   },
   "dependencies": {
