@@ -1,11 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { db, log } from "./db";
-  import { PrmTypes } from "./prm/PrmTypes";
   import Permission from "./pgs/permission.svelte";
   import Account from "./pgs/account.svelte";
   export let PageTabs=["permissions","account"];
-let tabs=[]
+export let tabs;
 
 
   let tabDet={
@@ -44,9 +42,15 @@ let tabs=[]
 
  
 </script>
+
+
+
 <div class="acc">
+  <div>
+    <img style="margin-top: 10px; margin-right: 30px;" width="80" src="/logo.svg" alt="" />
+  </div>
   {#each PageTabs as e}
-    <button class={`${e==actTab?"act":""}`}>
+    <button on:click={()=>{actTab=e}} class={`${e==actTab?"act":""}`}>
       {e}  
     </button>
   {/each}
@@ -54,20 +58,9 @@ let tabs=[]
 
 <div class="pg startpg">
   <div class="w">
-    <div>
-      <img width="120" src="/logo.svg" alt="" />
-    </div>
-    <div class="cont">
-      <div class="head">Permissions</div>
-      <div class="body">
-        {#each $log?.perm || [] as e}
-          <li>
-            <span>{e.classname}</span>
-            <svelte:component this={PrmTypes[e.type]?.comp}  cont={e} />
-          </li>
-        {/each}
-      </div>
-    </div>
+    {#if actTab}
+     <svelte:component this={tabDet[actTab].comp} ></svelte:component>
+  {/if}
   </div>
 </div>
 
@@ -76,26 +69,31 @@ let tabs=[]
 .acc{
   display: flex;
   margin: 16px 30px;
-  border-block: 2px solid $terl;
+  border-bottom: 2px solid $terl;
   
   box-sizing: content-box;
   button{
     background: none;
     border: none;
+    height: max-content;
     padding: 5px 10px  ;
     margin:0 5px;
+    margin-top: auto;
     font-size: 18px;
     color: $pri;
     cursor: pointer;
+    transition: all;
+
     &.act{
-      font-weight: 400;
-      border-bottom: 2px $pri solid;
+      font-weight: 600;
+      transition: all;
+      border-bottom: 3px $pri solid;
     }
   }
 }
   .pg {
     width: 100%;
-    height: 90vh;
+    height: 75vh;
     overflow: auto;
     background: rgba($terl, 0.1);
     display: flex;
@@ -103,42 +101,5 @@ let tabs=[]
       padding: 90px;
     }
   }
-  .cont {
-    background: white;
-    border: solid $ter 1px;
-    
-    border-radius: 3px;
-    width: 80vw;
-    .head,
-    .body {
-      padding: 10px 30px;
-    }
-    .head {
-      font-size: 20px;
-      color: $pri;
-      border-bottom: $ter 1px solid;
-    }
-    .body {
-      color: rgb(68, 67, 67);
-    
-      
-      li {
-        display: block;
-        border: solid 1px rgba(128, 128, 128, 0.33);
-      border-radius: 10px;
-      padding: 5px 15px;
-      margin: 10px 0;
-        span {
-          padding: 2px 6px;
-          background: $terl;
-          font-size: 15px;
-          color: $pri;
-          border-radius: 5px;
-          display: block;
-          margin: 5px 0;
-          width: max-content;
-        }
-      }
-    }
-  }
+
 </style>
