@@ -19,10 +19,10 @@ const createWindow = () => {
       }
     })
 
-    win.loadURL("http://localhost:5000")
+   // win.loadURL("http://localhost:5000")
     let ses=win.webContents.session.clearCache()
     
-   // win.loadFile('helpers/Control/a/dist/index.html')
+   win.loadFile('helpers/Control/a/dist/index.html')
   }
 
   ipcMain.on('close', () => {
